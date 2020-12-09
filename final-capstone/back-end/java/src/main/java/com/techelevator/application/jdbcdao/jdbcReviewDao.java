@@ -1,5 +1,6 @@
 package com.techelevator.application.jdbcdao;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,6 +34,11 @@ public class jdbcReviewDao implements reviewDao{
 			 reviews.add(aReview);
 		 }
 		 return reviews;
+	}
+	@Override
+	public void addReview(Review aReview) {
+		String sqladdReview = "INSERT INTO reviews (description, rating, beer_id, user_id, name, create_date) VALUES (?,?,?,?,?,?)";
+		jdbcTemplate.update(sqladdReview, aReview.getDescription(), aReview.getRating(), aReview.getBeerId(),aReview.getUserId(), aReview.getName(), aReview.getCreateTime());
 	}
 	
 	
