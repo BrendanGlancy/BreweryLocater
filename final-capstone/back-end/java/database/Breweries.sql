@@ -50,4 +50,4 @@ VALUES('Fat Heads Brewery','17450 Engle Lake Dr','Middleburg Heights','44130','2
 INSERT INTO breweries (name, address, city, zipcode, phone_number, description, brewery_logo_url, website_url, user_id, hours, lat, lng)
 VALUES('Baithouse Brewery','223 MEIGS STREET','Sandusky','44870','4193665372','One of our �co-conspirators� thought we needed a big-ole-perch on our sign to help passersby find the brewery. So we turned this big perch idea over to Bob the Fish carver and he thought it would look good all by itself on the building.','https://baithousebrewery.com/wp-content/uploads/2019/04/baithouse-logo-300x279.png','http://www.baithousebrewery.com',2,'COMING SOON',0,0);
 
-COMMIT;
+

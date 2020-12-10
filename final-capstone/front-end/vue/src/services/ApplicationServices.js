@@ -14,7 +14,20 @@ export default {
     getBreweryByID(id) {
         return http.get(`/breweries/${id}`)
     },
+    getBeerByID(id) {
+        return http.get(`/beers/${id}`)
+    },
     getBeerByBreweryID(id) {
         return http.get(`/breweries/${id}/beers`)
+    },
+    getReviewsByBeerID(beerId){
+        return http.get(`/reviews/${beerId}`)
+    },
+    addReview(review){
+        return http.post(`/reviews`, review);
+    },
+    getUserByID(id){
+        return http.get(`users/${id}`);
     }
+
 }

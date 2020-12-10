@@ -91,6 +91,9 @@ public class Brewery {
 		this.websiteUrl = websiteUrl;
 		
 	}
+	public String getWebsiteUrl() {
+		return websiteUrl;
+	}
 	
 	
 }

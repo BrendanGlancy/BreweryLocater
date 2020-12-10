@@ -88,6 +88,21 @@ public class jdbcBreweryDao implements breweryDao{
 		  jdbcTemplate.update(sqlDeleteBrewery, breweryId);
 	  }
 	 
+	  
+// GET BREWERY BY USERID
+	  @Override
+	  public List<Brewery> getBreweryByUserID(Long userId) {
+		  List<Brewery> allBreweriesByUserId = new ArrayList<>();
+			String sqlGetAllBreweriesByUserId = "SELECT * FROM breweries WHERE user_id = ?";
+			SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetAllBreweriesByUserId, userId);
+			
+			while(results.next()) {
+				Brewery aBrewery = mapRowToBrewery(results);
+				allBreweriesByUserId.add(aBrewery);
+			}
+			return allBreweriesByUserId;
+	  }
+	 
 	
 	// MAP ROW TO BREWERY
 	

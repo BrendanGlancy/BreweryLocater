@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.sql.DataSource;
+import javax.validation.Valid;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
@@ -22,11 +23,11 @@ public class jdbcReviewDao implements reviewDao{
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 	
-	//GET REVIEWS
+	//GET REVIEWS BY ID
 	@Override
 	public List<Review> getReviews(Long beerId){
 		 List<Review> reviews = new ArrayList<>();
-		 String sqlGetReviewByBeerId = "SELECT * FROM reviews WHERE beer_id = ?";
+		 String sqlGetReviewByBeerId = "SELECT * FROM reviews WHERE beer_id = ? ORDER BY create_date";
 		 SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetReviewByBeerId, beerId);
 		 
 		 while(results.next()) {
@@ -35,6 +36,9 @@ public class jdbcReviewDao implements reviewDao{
 		 }
 		 return reviews;
 	}
+	
+	//ADD A REVIEW
+	
 	@Override
 	public void addReview(Review aReview) {
 		String sqladdReview = "INSERT INTO reviews (description, rating, beer_id, user_id, name, create_date) VALUES (?,?,?,?,?,?)";
@@ -42,8 +46,33 @@ public class jdbcReviewDao implements reviewDao{
 	}
 	
 	
+	// why is this method here?
+	@Override
+	public void saveReview(@Valid Review review) {
+		String sqlSaveReview = "INSERT INTO reviews(description, rating, create_date, beer_id) VALUES(?,?,?,?)";
+		jdbcTemplate.update(sqlSaveReview, review.getDescription(), review.getRating(), 
+				review.getCreateTime(), review.getBeerId());
+		
+	}
 	
+	// GET REVIEWS BY BEER ID
 	
+	@Override
+	public List<Review> searchReviewsByBeerId(long beerId) {
+		List<Review> reviewList = new ArrayList<>();
+		String sqlSearchReviewByBeerId = "SELECT * FROM reviews WHERE beer_id = ? ORDER BY create_date";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSearchReviewByBeerId, beerId);
+		
+		while(results.next()){
+			reviewList.add(mapRowToReview(results));
+		}
+		
+		
+		return reviewList;
+	}
+	
+	//MAP ROW TO REVIEW
+
 	private Review mapRowToReview(SqlRowSet row) {
 		Review review = new Review();
 		
@@ -56,7 +85,5 @@ public class jdbcReviewDao implements reviewDao{
 		review.setUserId(row.getLong("user_id"));
 		return review;
 	}
-	
-	
 
 }

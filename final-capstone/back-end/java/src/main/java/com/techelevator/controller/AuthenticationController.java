@@ -75,6 +75,16 @@ public class AuthenticationController {
             logRequest("Request completed with status code 200: ");
         }
     }
+    
+    /****************************************
+	 * Request Mapping to get user by id
+	 *
+	 ***/
+	
+	@RequestMapping(path="/users/{userId}", method = RequestMethod.GET)
+	public User getUserByID(@PathVariable Long userId) {
+		return userDAO.getUserById(userId);
+	}
 
     /**
      * Object to return as body in JWT Authentication.

@@ -16,4 +16,6 @@ public interface breweryDao {
 
 	void deleteBrewery(Long breweryId);
 
+	List<Brewery> getBreweryByUserID(Long userId);
+
 }

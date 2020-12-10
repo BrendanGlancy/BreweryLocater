@@ -1,5 +1,4 @@
 <template>
-<div id="background">
     <div id="login" class="text-center">
     <form class="form-signin" @submit.prevent="login">
       <h1 class="h3 mb-3 font-weight-normal heading">Sign In</h1>
@@ -46,7 +45,6 @@
       </div>
     </form>
   </div>
-</div>
 </template>
 
 <script>
@@ -86,35 +84,44 @@ export default {
 }
 </script>
 
-
-<!-- CSS -->
 <style scoped>
-.h3 {
-    font-size: 2rem;
+* {
+  padding: 0;
+  margin: 0;
 }
 
-h1 {
-  margin-top: -5px;
-  margin-bottom: -10px;
-  text-align: center;
+#login {
+  height: 87vh;
 }
 
 form.form-signin {
-  top: 170px;
   position: absolute;
   right: 0;
   margin: 20px;
   max-width: 300px;
   padding: 16px;
-  background-color: white;
   border-radius: 5px;
+  padding-left: 30px;
 } 
+
+h1 {
+  margin: -5px 0px -20px 0px;
+  font-size: 2rem;
+}
+
+.form-signin {
+  background-color: #f2f2f2;
+  background-position: center;
+  background-size: 100vh;
+  backdrop-filter: blur(5px);
+}
 
 #username.form-control {
     font-size: 50;
     margin-right: 1%;
     margin-top: 5px;
 }
+
 #password.form-control {
   font-size: 50;
   margin-right: 10%;
@@ -124,6 +131,7 @@ form.form-signin {
 a.need-account {
   text-decoration: none;
   color: #FF3C00;
+
 }
 
 .need-account:hover {
@@ -135,21 +143,14 @@ a.need-account {
   background-color: #FF3C00;
   border: none;
   font-size: 15px;
-  margin-left: 30px;
+  margin-left: 20px;
+  width: 70px;
+  padding: 3px;
+  border-radius: 3px;
 }
 
 .submit:hover {
   background-color: #311D00;
   color: white;
-}
-
-div#background {
-    background-image: url('../img/cle-sign-bg.jpg');
-    position: relative;
-    background-position:center;
-    background-size: cover;
-    background-attachment: fixed;
-    padding-top: 738px;
-    top: -10px;
 }
 </style>

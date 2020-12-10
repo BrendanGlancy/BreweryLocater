@@ -87,6 +87,19 @@ public class jdbcBeerDao implements beerDao {
 	}
 	
 	/****************************************
+	 * Update a beer
+	 *	- need preAuth for Brewer
+	 ***/
+	
+	@Override
+	public void updateBeer(Beer aBeer) {
+		String sqlUpdateBeer = "UPDATE beers SET name = ?, abv = ?, ibu = ?, info = ?, img_url = ?, brewery_id = ?, is_active = ?"
+				+ "WHERE beer_id = ?";
+		jdbcTemplate.update(sqlUpdateBeer, aBeer.getName(), aBeer.getAbv(), aBeer.getIbu(), aBeer.getInfo(), aBeer.getImgUrl(),
+				aBeer.getBreweryId(), aBeer.isActive(), aBeer.getId());
+	}
+	
+	/****************************************
 	 * SQL row set for Beer Pojo
 	 *
 	 ***/

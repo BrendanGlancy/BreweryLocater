@@ -40,6 +40,15 @@
         required
       />
       <br>
+      <label> Are you a Brewer? </label>
+      <input 
+        type="checkbox"
+        id="brewer-checkbox"
+        class="checkbox"
+        v-on:change="(user.role == 'user' ? user.role = 'brewer' : user.role = 'user')"
+        />
+        <label> Yes</label>
+        <br>
       <router-link class="have-account" :to="{ name: 'login' }">Have an account?</router-link>
       <button class=" create-account btn btn-lg btn-primary btn-block" type="submit">
         Create Account
@@ -100,29 +109,38 @@ export default {
 </script>
 
 <style scoped>
+* {
+  padding: 0px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#background {
+  height: 87vh;
+}
+
 input {
     margin: 8px;
 }
 
 h1 {
-  margin-top: -5px;
-  margin-bottom: -10px;
-  text-align: center;
+  margin: -5px 0px -20px -12px;
+  font-size: 2rem;
 }
 
 form.form-register {
-  top: 170px;
   position: absolute;
   right: 0;
   margin: 20px;
   max-width: 300px;
   padding: 16px;
-  background-color: white;
+  background-color: #f2f2f2;
   border-radius: 5px;
+  padding-left: 30px;
 } 
 
 .input-box {
-  margin-left: -1px;
+  margin-left: -10px;
 }
 
 .have-account {
@@ -139,23 +157,13 @@ form.form-register {
   background-color: #FF3C00;
   border: none;
   font-size: 15px;
-  margin-left: 30px;
-  margin-top: 10px;
+  padding: 3px;
+  margin: 10px 0px 0px 10px;
+  border-radius: 3px;
 }
 
 .create-account:hover {
   background-color: #311D00;
   color: white;
-}
-
-
-div#background {
-    background-image: url('../img/cle-sign-bg.jpg');
-    position: relative;
-    background-position:center;
-    background-size: cover;
-    background-attachment: fixed;
-    padding-top: 738px;
-    top: -10px;
 }
 </style>

@@ -33,7 +33,7 @@ CREATE TABLE beers (
     ibu integer,
     type varchar(255) NOT NULL,
     info text NOT NULL,
-    img_url varchar NOT NULL,
+    img_url varchar,
     is_active boolean,
     brewery_id integer,
     CONSTRAINT pk_beers_beer_id PRIMARY KEY (beer_id),
