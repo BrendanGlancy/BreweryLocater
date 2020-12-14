@@ -22,11 +22,16 @@ public class UserSqlDAO implements UserDAO {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+    //GET ID BY USERNAME
+    
     @Override
     public int findIdByUsername(String username) {
         return jdbcTemplate.queryForObject("select user_id from users where username = ?", int.class, username);
     }
 
+    
+    //GET USER BY ID
+    
 	@Override
 	public User getUserById(Long userId) {
 		String sql = "SELECT * FROM users WHERE user_id = ?";
@@ -38,6 +43,8 @@ public class UserSqlDAO implements UserDAO {
 		}
 	}
 
+	// GET ALL USERS
+	
     @Override
     public List<User> findAll() {
         List<User> users = new ArrayList<>();
@@ -52,6 +59,8 @@ public class UserSqlDAO implements UserDAO {
         return users;
     }
 
+    // FIND USER BY ID
+    
     @Override
     public User findByUsername(String username) throws UsernameNotFoundException {
         for (User user : this.findAll()) {
@@ -60,6 +69,14 @@ public class UserSqlDAO implements UserDAO {
             }
         }
         throw new UsernameNotFoundException("User " + username + " was not found.");
+    }
+    
+    // DELETE A USER
+    
+    @Override
+    public void deleteUser(Long userId) {
+    	String sqlDeleteAUser = "DELETE FROM users WHERE user_id = ?";
+    	jdbcTemplate.update(sqlDeleteAUser, userId);
     }
 
     @Override

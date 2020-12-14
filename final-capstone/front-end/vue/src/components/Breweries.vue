@@ -51,13 +51,15 @@ div.loading {
     z-index: 998;
 }
 
-/* .brewery-list {
+.brewery-list {
+    padding-right: 25px;
+    padding-left: 25px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-} */
-
+    flex-wrap: wrap;
+    grid-gap: 10px 200px;
+    align-self: space-around;
+    justify-content: space-around;
+} 
 .heading {
     font-size: 2rem;
     display: flex;
@@ -69,39 +71,4 @@ div.loading {
     color: #ff7300;
     text-shadow: 2px 2px 15px black;
 }
-
-/* .card-space {
-    margin-left: 5px; margin-right: 5px;
-    color: black;
-    text-decoration: none;
-} */
-
-/* .card-space:hover {
-    color: #311D00;
-    text-decoration: underline;
-}
-
-.card-space:visited {
-    color: gray;
-} */
-
-/* div#background {
-    background-image: url('../img/cle-sign-bg.jpg');
-    position: relative;
-    background-position:center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-} */
-
- .brewery-list {
-    padding-right: 25px;
-    padding-left: 25px;
-    display: flex;
-    flex-wrap: wrap;
-    grid-gap: 10px 200px;
-    align-self: space-around;
-    justify-content: space-around;
-} 
-
 </style>

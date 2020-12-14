@@ -581,10 +581,6 @@ INSERT INTO beers (name, abv, type, info, img_url, is_active, brewery_id) VALUES
 ('PROSPERITY WHEAT', 6.0, 'Wheat',
 'Formerly known as ***** Street Wheat! If you’ve ever spent time in a German Beer Garden, you know how much they love their wheat beer.  Our Bavarian style Hefeweizen is a satisfying blend of sweet wheat and pale malts, clove and banana aromatics, and the zesty tang of wheat beer yeast.',
 'http://res.cloudinary.com/teclebrew/image/upload/v1511650039/market_prosperity_ber_pic_efdril.png', true, 20);
-INSERT INTO beers (name, abv, type, info, img_url, is_active, brewery_id) VALUES 
-('PROGRESS PILSNER', 5.5, 'Pilsner',
-'Great American Beer Festival Award Winning Brew! Inspired by the Pilsners of the Rhine region, this lager is a tribute to the spicy, crisp and clean character of German noble hops and has just the right malt body to balance. Named aptly for the Cleveland slogan “Progress&Prosperity�?.',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511650338/market_progress_beer_pic_oe4yta.png', true, 20);
 
 
 
@@ -1201,14 +1197,6 @@ INSERT INTO reviews (name, description, rating, create_date, beer_id) VALUES
 ('Very interesting',
 'This is one of the most unique beers I have had, it tastes great too',
 4,now(),70);
-INSERT INTO reviews (name, description, rating, create_date, beer_id) VALUES
-('Buy This!',
-'Excellent Brew',
-4,now(),71);
-INSERT INTO reviews (name, description, rating, create_date, beer_id) VALUES
-('Average',
-'Not my style',
-4,now(), 71);
 
 
 COMMIT;

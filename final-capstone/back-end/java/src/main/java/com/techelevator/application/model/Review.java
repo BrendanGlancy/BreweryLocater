@@ -57,7 +57,7 @@ public class Review {
 	}
 	
 	public long getUserId() {
-		return userId;
+		return this.userId;
 	}
 	
 	public void setUserId(Long userId) {

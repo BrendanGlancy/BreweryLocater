@@ -69,14 +69,17 @@ h1.heading {
 .card-space:nth-child(odd) {
     background-color: rgb(243, 241, 241);
     border-radius: 12.5%;
+    box-shadow: inset 0px 0px 10px #000;
 }
 .card-space:nth-child(even) {
     background-color: rgb(185, 185, 185);
     border-radius: 12.5%;
+    box-shadow: inset 0px 0px 10px #000;
 }
 .card-space:hover {
     background-color: rgb(139, 139, 139);
     transition: 0.5s ease;
+    box-shadow: inset 0px 0px 5px #000;
 }
 
 </style>

@@ -3,9 +3,10 @@
     <router-link id="logo" v-bind:to="{ name: 'home' }"><img id="logo" src="./assets/BrewFootball.png"/></router-link>
     <nav class="navbar">
       <ul class="nav-links">
+        <li><router-link id="admin" v-bind:to="{ name: 'admin' }" v-if="this.$store.state.user.username == 'admin'">Admin Features</router-link></li>
         <li><router-link id="browse-brewery" v-bind:to="{ name: 'breweries' }">Browse Breweries</router-link></li>
         <li><router-link id="browse-beer" v-bind:to="{ name: 'beers' }">Browse Beers</router-link></li>
-        <li><router-link id="browse-random" v-bind:to="{ name: 'home' }">Random Beer</router-link></li>
+        <li><a :href="$router.resolve({name: 'beer-details', params: {id: randomBeer()}}).href">Random Beer</a></li>
         <li><router-link id="logout-link" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link></li>
         <li><router-link id="login-link" v-bind:to="{ name: 'login' }" v-if="$store.state.token === ''">Login</router-link></li>
       </ul>
@@ -13,6 +14,28 @@
     <router-view />
   </div>
 </template>
+<script>
+import appServices from './services/ApplicationServices'
+export default {
+  data(){
+    return {
+      beers: []
+    }
+  },
+  created() {
+    appServices.getBeers().then(response => {
+      this.beers = response.data
+    })
+  },
+  methods: {
+    randomBeer(){
+      
+      return Math.floor(Math.random() * Math.floor(this.beers.length - 1))
+    }
+  }
+  
+}
+</script>
 
 <style scoped>
 * {
@@ -29,9 +52,10 @@ ul {
   background-color: rgb(59, 64, 75);
   position: fixed;
   top: 1rem;
-  width: 50%;
+  width: 75%;
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
+  box-shadow: inset 0px 0px 10px #000;
 }
 
 div#app {
@@ -79,6 +103,7 @@ a:hover, a:visited, a:link, a:active {
 
 li a:hover {
   background-color: #111;
+  box-shadow: inset 0px 0px 5px white;
 }
 
 #logo { 

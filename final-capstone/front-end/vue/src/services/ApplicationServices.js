@@ -24,10 +24,36 @@ export default {
         return http.get(`/reviews/${beerId}`)
     },
     addReview(review){
-        return http.post(`/reviews`, review);
+        return http.post(`/reviews`, review)
     },
     getUserByID(id){
-        return http.get(`users/${id}`);
+        return http.get(`users/${id}`)
+    },
+    createNewBrewery(brewery){
+        return http.post(`/breweries`, brewery)
+    },
+    getAllUsers(){
+        return http.get(`/users`)   
+    },
+    getBreweryByUserId(id){
+        return http.get(`/users/${id}/breweries`)
+    },
+    deleteUser(id){
+        return http.delete(`/users/${id}`)
+    },
+    deleteBrewery(id){
+        return http.delete(`breweries/${id}`)
+    },
+    addNewBeer(beer){
+        return http.post(`/beers`, beer)
+    },
+    deleteBeer(id){
+        return http.delete(`beers/${id}`)
+    },
+    updateBeer(beer){
+        return http.put(`/beers`, beer)
+    },
+    updateBrewery(brewery){
+        return http.put(`/breweries`, brewery)
     }
-
 }

@@ -53,7 +53,7 @@ CREATE TABLE reviews (
     user_id integer,
     beer_id integer,
     rating int NOT NULL,
-    create_date timestamp NOT NULL DEFAULT NOW(),
+    create_date timestamp DEFAULT NOW(),
     CONSTRAINT pk_reviews_review_id PRIMARY KEY (reviews_id),
     CONSTRAINT fk_users_user_id FOREIGN KEY (user_id) REFERENCES users(user_id), 
     CONSTRAINT fk_beers_beer_id FOREIGN KEY (beer_id) REFERENCES beers(beer_id)

@@ -13,41 +13,47 @@
       <input
         type="text"
         id="username"
-        class="input-box"
+        class="username-input-box"
         placeholder="What shall we call you?"
         v-model="user.username"
         required
         autofocus
       />
       <br>
-      <label for="password" class="sr-only">Password</label>
-      <br>
-      <input
-        type="password"
-        id="password"
-        class="input-box"
-        placeholder="Please...not password123"
-        v-model="user.password"
-        required
-      />
-      <br>
-      <input
+      <div class="password">
+        <label for="password" class="sr-only">Password</label>
+        <br>
+        <input
+          type="password"
+          id="password"
+          class="password-input-box"
+          placeholder="Please...not password123"
+          v-model="user.password"
+          required
+        />
+        <input
         type="password"
         id="confirmPassword"
-        class="input-box"
+        class="confirm-password-input-box"
         placeholder="One more time please"
         v-model="user.confirmPassword"
         required
-      />
-      <br>
-      <label> Are you a Brewer? </label>
-      <input 
-        type="checkbox"
-        id="brewer-checkbox"
-        class="checkbox"
-        v-on:change="(user.role == 'user' ? user.role = 'brewer' : user.role = 'user')"
         />
-        <label> Yes</label>
+      </div>
+      <br>
+      <br>
+      <div class="brewer">
+        <label class="brewer-label"> Are you a Brewer? </label>
+        <div class="checkbox">
+          <input 
+          type="checkbox"
+          id="brewer-checkbox"
+          class="checkbox"
+          v-on:change="(user.role == 'user' ? user.role = 'brewer' : user.role = 'user')"
+          />
+        </div>
+        <label class="yes"> Yes</label>
+      </div>
         <br>
       <router-link class="have-account" :to="{ name: 'login' }">Have an account?</router-link>
       <button class=" create-account btn btn-lg btn-primary btn-block" type="submit">
@@ -119,8 +125,8 @@ export default {
   height: 87vh;
 }
 
-input {
-    margin: 8px;
+.password {
+  margin-top: 1rem;
 }
 
 h1 {
@@ -128,10 +134,14 @@ h1 {
   font-size: 2rem;
 }
 
+.sr-only {
+  margin-left: -.6rem;
+}
+
 form.form-register {
   position: absolute;
   right: 0;
-  margin: 20px;
+  margin: 5vh;
   max-width: 300px;
   padding: 16px;
   background-color: #f2f2f2;
@@ -139,13 +149,21 @@ form.form-register {
   padding-left: 30px;
 } 
 
-.input-box {
+.username-input-box, .password-input-box, .confirm-password-input-box  {
+  margin-top: .5rem;
   margin-left: -10px;
 }
 
 .have-account {
   text-decoration: none;
   color: #FF3C00;
+}
+
+.brewer {
+  display: inline;
+}
+.checkbox {
+  display: inline-block;
 }
 
 .have-account:hover {

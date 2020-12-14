@@ -18,5 +18,7 @@ public interface UserDAO {
 
 	void updatePassword(String userName, String password);
 
+	void deleteUser(Long userId);
+
 	
 }

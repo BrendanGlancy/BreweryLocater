@@ -10,6 +10,7 @@ import Beers from '../components/Beers'
 import BreweryDetails from '../components/BreweryDetails'
 import BeerDetails from '../components/BeerDetails'
 import Review from '../components/Review'
+import Admin from '../components/Admin'
 
 Vue.use(Router)
 
@@ -31,7 +32,7 @@ const router = new Router({
       name: 'home',
       component: Home,
       meta: {
-        requiresAuth: false
+        requiresAuth: false,
       }
     },
     {
@@ -39,7 +40,7 @@ const router = new Router({
       name: "login",
       component: Login,
       meta: {
-        requiresAuth: false
+        requiresAuth: false,
       }
     },
     {
@@ -47,7 +48,7 @@ const router = new Router({
       name: "logout",
       component: Logout,
       meta: {
-        requiresAuth: false
+        requiresAuth: false,
       }
     },
     {
@@ -55,7 +56,7 @@ const router = new Router({
       name: "register",
       component: Register,
       meta: {
-        requiresAuth: false
+        requiresAuth: false,
       }
     },
     {
@@ -63,7 +64,7 @@ const router = new Router({
     name: "breweries",
     component: Breweries,
     meta: {
-      requiresAuth: false
+      requiresAuth: false,
     },
     },
     {
@@ -71,7 +72,7 @@ const router = new Router({
       name: "beers",
       component: Beers,
       meta: {
-        requiresAuth: false
+        requiresAuth: false,
       },
     },
     {
@@ -79,7 +80,7 @@ const router = new Router({
       name: "brewery-details",
       component: BreweryDetails,
       meta: {
-        requiresAuth: false
+        requiresAuth: false,
       }
     },
     {
@@ -87,7 +88,7 @@ const router = new Router({
       name: 'beer-details',
       component: BeerDetails,
       meta: {
-        requiresAuth: false
+        requiresAuth: false,
       }
     },
     {
@@ -95,9 +96,28 @@ const router = new Router({
       name: "reviews",
       component: Review,
       meta: {
-        requiresAuth: false
+        requiresAuth: false,
       },
     },
+    {
+      path: '/admin',
+      name: 'admin',
+      component: Admin,
+      beforeEnter: (to, from, next) =>{
+        if (store.state.user.authorities.some(e => e['name'] === 'ROLE_ADMIN')){
+          next()
+        } else{
+          alert (
+            "Sorry, but you don't have the privileges to view this page.",
+            "Please log in as an admin to proceed."
+          )
+          next(from)
+        }
+      },
+      meta: {
+        requiresAuth: true,
+      }
+    }
  
   ]
 })
@@ -107,12 +127,13 @@ router.beforeEach((to, from, next) => {
   const requiresAuth = to.matched.some(x => x.meta.requiresAuth);
 
   // If it does and they are not logged in, send the user to "/login"
-  if (requiresAuth && store.state.token === '') {
+  if ((requiresAuth) && store.state.token === '') {
     next("/login");
-  } else {
+  }else {
     // Else let them go to their next destination
     next();
   }
 });
 
 export default router;
+
