@@ -2,7 +2,7 @@
 
 'postgres backend, Vue frontend'
 
-Vercle hosting is a work in progress...
+Vercel hosting is a work in progress...
 
 Co-authored-by: name <kautzmad63@gmail.com> 
 
