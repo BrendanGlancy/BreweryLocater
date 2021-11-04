@@ -9,3 +9,26 @@ Co-authored-by: another-name <johnpatrickmullen88@gmail.com>
 Co-authored-by: another-name <VinceDeMichele@gmail.com>
 
 Co-authored-by: another-name <beads1997@gmail.com>
+
+
+to run this script
+
+Inside the /database/ directory you will find an executable Bash script (.sh file)
+
+To run: 
+```console
+cd <project-root>/database/ chmod u+r+x create_capstone-db.sh ./create_capstone-db.sh
+```
+above ^ works on MacOS
+
+using Ubuntu you can run this by doing a
+
+this might also work on the tech elevator laptops, sh ./create_capstone-db.sh
+
+# After database population
+
+Start the java server
+
+```console
+
+```
