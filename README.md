@@ -30,5 +30,16 @@ this might also work on the tech elevator laptops, sh ./create_capstone-db.sh
 Start the java server
 
 ```console
-
+cd <project-root>/application-server/
+javac application-server
+java application-server
 ```
+
+# After server is started
+
+```console
+cd <project-root>/vue/
+npm install
+npm run serve
+```
+Now you can interact with this full stack application
