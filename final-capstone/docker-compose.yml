@@ -1,0 +1,53 @@
+version: '3.6'
+services:
+  db:
+    image: postgres
+    #hostname: postgres
+    container_name: brew-docker-db
+    environment:
+      POSTGRES_PASSWORD: brew
+      POSTGRES_USER: brew
+      POSTGRES_DB: brew
+    ports:
+      #- 5433:5432
+      - target: 5432
+        published: 5433
+        protocol: tcp
+        mode: host
+    networks:
+      - backdb
+    expose: 
+      - 5433
+  
+  back:
+    build: 
+      context: ./back
+      target:  finalApp
+    image: brendanglancy/brew-back
+    container_name: brew-backend
+    #environment:
+    #  WAIT_HOSTS: postgres:5433
+    ports:
+      - 8090:8090
+    depends_on:
+      - db
+    networks:
+     # - frontback 
+      - backdb
+
+  front:
+    build: ./front
+    image: yahiadev/brew-front
+    container_name: brew-front
+    ports:
+      - 8080:8080
+    depends_on:
+      - back
+    networks: 
+      - frontback     
+  
+networks: 
+  backdb:
+    driver: bridge
+  frontback:
+    driver: bridge
