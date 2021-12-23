@@ -31,7 +31,10 @@ Thanks goes to these wonderful people:
   </tr>
 </table>
 
+---
 https://user-images.githubusercontent.com/61941978/147204062-a223f010-ca63-491e-8c85-9a6c0c0fb7cf.MOV
+
+---
 
 # Install
 
