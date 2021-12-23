@@ -1,23 +1,29 @@
 # Brewery Finder website
 
-'postgres backend, Vue frontend'
+<img src="https://github.com/devicons/devicon/blob/master/icons/postgresql/postgresql-original-wordmark.svg" alt="VueJS" width="50" height="50"/>
+<img src="https://github.com/devicons/devicon/blob/master/icons/postgresql/postgresql-original-wordmark.svg" alt="PostgreSQL" width="50" height="50"/>
 
+## Co-authors
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/BrendanGlancy"><img src="https://avatars.githubusercontent.com/u/61941978?v=4" width="100px;" alt=""/><br /><sub><b>Brendan Glancy</b></sub></a><br /><a title="Code">💻</a> <a title="Bug report">🐛</a></td>
-    <td align="center"><a href="https://github.com/v-demichele"><img src="https://avatars.githubusercontent.com/u/62919992?v=4" width="100px;" alt=""/><br /><sub><b>Vince </b></sub></a><br /><a title="Code">💻</a> <a title="Bug report">🐛</a></td>
-    <td align="center"><a href="https://github.com/markthebault"><img src="https://avatars.githubusercontent.com/u/3846664?v=4" width="100px;" alt=""/><br /><sub><b>Mark Thebault</b></sub></a><br /><a title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/diegodalvarez"><img src="https://avatars.githubusercontent.com/u/48641554?v=4" width="100px;" alt=""/><br /><sub><b>Diego Alvarez</b></sub></a><br /><a title="Code">💻🐛</a></td>
-    <td align="center"><a href="https://github.com/rakeshbhat9"><img src="https://avatars.githubusercontent.com/u/11472305?v=4" width="100px;" alt=""/><br /><sub><b>Rakesh Bhat</b></sub></a><br /><a title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/Haizzz"><img src="https://avatars.githubusercontent.com/u/5275680?v=4" width="100px;" alt=""/><br /><sub><b>Anh Le</b></sub></a><br /><a title="Bug report">🐛</a></td>
+    <td align="center"><a href="https://github.com/BrendanGlancy"><img src="https://avatars.githubusercontent.com/u/61941978?v=4" width="100px;" alt=""/><br /><sub><b>Brendan Glancy</b></sub></a><br /><a title="Code">💻</a></a></td>
+    <td align="center"><a href="https://github.com/Brandon-Eads"><img src="https://avatars.githubusercontent.com/u/72284442?v=4" width="100px;" alt=""/><br /><sub><b>Brandon Eads</b></sub></a><br /><a title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/v-demichele"><img src="https://avatars.githubusercontent.com/u/62919992?v=4" width="100px;" alt=""/><br /><sub><b>Vince DeMichele</b></sub></a><br /><a title="Code">💻</a> </a></td>
+    <td align="center"><a href="https://github.com/JohnPatrickMullen"><img src="https://avatars.githubusercontent.com/u/70601152?v=4" width="100px;" alt=""/><br /><sub><b>John Mullen</b></sub></a><br /><a title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Kautzmad"><img src="https://avatars.githubusercontent.com/u/46768512?v=4" width="100px;" alt=""/><br /><sub><b>Doug Kautzman</b></sub></a><br /><a title="Code">💻</a></td>
   </tr>
 </table>
 
+# Usage
 to run this script
 
 Inside the /database/ directory you will find an executable Bash script (.sh file)
 
-To run: 
+To run:
 ```console
 cd <project-root>/database/ chmod u+r+x create_capstone-db.sh ./create_capstone-db.sh
 ```
