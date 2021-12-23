@@ -13,7 +13,7 @@
 ---
 
 
-https://user-images.githubusercontent.com/61941978/147204062-a223f010-ca63-491e-8c85-9a6c0c0fb7cf.MOV
+
 
 
 ## Co-authors
@@ -30,6 +30,8 @@ Thanks goes to these wonderful people:
     <td align="center"><a href="https://github.com/Kautzmad"><img src="https://avatars.githubusercontent.com/u/46768512?v=4" width="100px;" alt=""/><br /><sub><b>Doug Kautzman</b></sub></a><br /><a title="Code">💻</a></td>
   </tr>
 </table>
+
+https://user-images.githubusercontent.com/61941978/147204062-a223f010-ca63-491e-8c85-9a6c0c0fb7cf.MOV
 
 # Install
 
