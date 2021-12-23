@@ -2,16 +2,16 @@
 
 'postgres backend, Vue frontend'
 
-Vercel hosting is a work in progress...
-
-Co-authored-by: name <kautzmad63@gmail.com> 
-
-Co-authored-by: another-name <johnpatrickmullen88@gmail.com>
-
-Co-authored-by: another-name <VinceDeMichele@gmail.com>
-
-Co-authored-by: another-name <beads1997@gmail.com>
-
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/BrendanGlancy"><img src="https://avatars.githubusercontent.com/u/61941978?v=4" width="100px;" alt=""/><br /><sub><b>Brendan Glancy</b></sub></a><br /><a title="Code">💻</a> <a title="Bug report">🐛</a></td>
+    <td align="center"><a href="https://github.com/v-demichele"><img src="https://avatars.githubusercontent.com/u/62919992?v=4" width="100px;" alt=""/><br /><sub><b>Vince </b></sub></a><br /><a title="Code">💻</a> <a title="Bug report">🐛</a></td>
+    <td align="center"><a href="https://github.com/markthebault"><img src="https://avatars.githubusercontent.com/u/3846664?v=4" width="100px;" alt=""/><br /><sub><b>Mark Thebault</b></sub></a><br /><a title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/diegodalvarez"><img src="https://avatars.githubusercontent.com/u/48641554?v=4" width="100px;" alt=""/><br /><sub><b>Diego Alvarez</b></sub></a><br /><a title="Code">💻🐛</a></td>
+    <td align="center"><a href="https://github.com/rakeshbhat9"><img src="https://avatars.githubusercontent.com/u/11472305?v=4" width="100px;" alt=""/><br /><sub><b>Rakesh Bhat</b></sub></a><br /><a title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Haizzz"><img src="https://avatars.githubusercontent.com/u/5275680?v=4" width="100px;" alt=""/><br /><sub><b>Anh Le</b></sub></a><br /><a title="Bug report">🐛</a></td>
+  </tr>
+</table>
 
 to run this script
 
