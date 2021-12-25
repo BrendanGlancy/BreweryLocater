@@ -18,7 +18,7 @@
 
 ## Co-authors
 
-Thanks goes to these wonderful people:
+Thanks to these wonderful people:
 
 [![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
 <table>
