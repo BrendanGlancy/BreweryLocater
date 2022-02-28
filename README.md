@@ -55,8 +55,11 @@ above ^ works on MacOS
 
 using Ubuntu you can run this by doing a
 
-this might also work on the tech elevator laptops, sh ./create_capstone-db.sh
+```sh
+sh ./create_capstone-db.sh
+```
 
+this might also work on the tech elevator laptop
 # After database population
 
 Start the java server
